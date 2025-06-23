@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "static/images" # Folder where user uploaded files will be stored
+public_folder: "/images" # The folder where the files are stored, relative to the site root
+
+collections:
+  - name: "news"
+    label: "News"
+    folder: "_data/news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title (English)", name: "title_en", widget: "string"}
+      - {label: "Title (Arabic)", name: "title_ar", widget: "string"}
+      - {label: "Category (English)", name: "category_en", widget: "string", default: "Club News"}
+      - {label: "Category (Arabic)", name: "category_ar", widget: "string", default: "أخبار النادي"}
+      - {label: "Excerpt (English)", name: "excerpt_en", widget: "text"}
+      - {label: "Excerpt (Arabic)", name: "excerpt_ar", widget: "text"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Body (English)", name: "body_en", widget: "markdown"}
+      - {label: "Body (Arabic)", name: "body_ar", widget: "markdown"}
+
+  - name: "fixtures"
+    label: "Fixtures"
+    folder: "_data/fixtures"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Match ID", name: "id", widget: "number", value_type: "int"}
+      - {label: "Day", name: "day", widget: "number", value_type: "int"}
+      - {label: "Month (English)", name: "month_en", widget: "string"}
+      - {label: "Month (Arabic)", name: "month_ar", widget: "string"}
+      - {label: "Home Team (English)", name: "home_team_en", widget: "string"}
+      - {label: "Home Team (Arabic)", name: "home_team_ar", widget: "string"}
+      - {label: "Away Team (English)", name: "away_team_en", widget: "string"}
+      - {label: "Away Team (Arabic)", name: "away_team_ar", widget: "string"}
+      - {label: "Time", name: "time", widget: "string"}
+      - {label: "Venue (English)", name: "venue_en", widget: "string"}
+      - {label: "Venue (Arabic)", name: "venue_ar", widget: "string"}
+
+
